@@ -1,0 +1,95 @@
+    h1 {
+      font-family: Lato;
+      font-size: 24px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 700;
+      line-height: 26.4px;
+     }
+
+     h2 {
+      font-family: Lato;
+      font-size: 20px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 700;
+      line-height: 26.4px;
+
+     }
+
+      h3 {
+      font-family: Lato;
+      font-size: 14px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 700;
+      line-height: 15.4px;
+     }
+
+      h4 {
+      font-family: Lato;
+      font-size: 12px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 700;
+     }
+
+    p {
+      font-family: Lato;
+      font-size: 14px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 400;
+      line-height: 20px;
+
+    }
+
+    #mynav {
+      font-family: Lato;
+      font-size: 14px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 700;
+      line-height: 15.4px;
+     }
+
+     .navbar-brand, .nav-item {
+      font-family: Lato;
+      font-size: 16px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 700;
+     }
+
+
+    .page-link {
+      border-radius: 50%;
+      background-color: #F5F5F5;
+      color: black;
+      border: None;
+     }
+
+     .page-item.active .page-link{
+       background-color: #A9A9A9;
+       color: black;
+     }
+
+     a {
+      color: #3E3E3E;
+     }
+
+     .item img {
+      width:100%
+    }
+
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 70%;
+    }
+
+    article {
+      background-color: #EEEFEA;
+      opacity: .7;
+    }

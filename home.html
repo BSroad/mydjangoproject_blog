@@ -1,0 +1,63 @@
+{% extends "posts/base.html" %}
+
+{% block content%}
+
+  <div class="container">
+    <br />
+    <br />
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+        {% for post in posts %}
+        <div class="card shadow-sm p-3 mb-5 bg-white rounded">
+          <div class="card-body">
+            <div class="card-header">
+              <h2 class="card-title"><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h2>
+            </div>
+            <img class="card-img-top" src="{{ post.img.url }}" style="max-height:500px;" />
+            <br />
+            <br />
+            <p class="card-text"> {{ post.summary }}</p>
+            <a href="{% url 'post_detail' post.id %}" class="btn btn-default">Read More →</a>
+          </div>
+          <div class="card-footer text-muted">
+            <h4><i class="far fa-calendar-alt"></i> Posted on {{post.pub_date_pretty }}</h4>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div><!--.row -->
+
+    <!--Pagination-->
+
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center ">
+        {% if posts.has_previous %}
+        <li class="page-item">
+          <a class="page-link" href="/page/{{ posts.previous_page_number }}" tabindex="-1">Previous</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+          <a class="page-link" href="" tabindex="-1">Previous</a>
+
+        </li>
+        {% endif %}
+        {% for page in posts.paginator.page_range %}
+        {% if page == posts.number %}
+        <li class="page-item active"><a class="page-link" href="/page/{{ page }}/">{{ page }}</a></li>
+        {% else %}
+        <li class="page-item"><a class="page-link" href="/page/{{ page }}/">{{ page }}</a></li>
+        {% endif %}
+        {% endfor %}
+        {% if posts.has_next %}
+        <li class="page-item">
+          <a class="page-link" href="/page/{{ posts.next_page_number }}/">
+            Next
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </nav>
+
+  </div><!--.container -->
+
+{% endblock content %}
